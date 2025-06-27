@@ -9,7 +9,7 @@ import {
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-const CustomInputField = ({
+const CustomTextField = ({
   type,
   label,
   placeholder,
@@ -20,6 +20,7 @@ const CustomInputField = ({
 
   return (
     <TextField
+ 
       label={label}
       type={isPassword ? (showPassword ? 'text' : 'password') : type}
       placeholder={placeholder}
@@ -40,4 +41,4 @@ const CustomInputField = ({
   );
 };
 
-export default CustomInputField;
+export default CustomTextField;
