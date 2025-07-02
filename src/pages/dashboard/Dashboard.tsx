@@ -1,36 +1,45 @@
-import { Box} from "@mui/material"
+import { Box,Stack} from "@mui/material"
 import LineChart from "../../components/charts/LineChart"
 import Earning from "../../components/cards/Earning"
 import ItemEarning from "../../components/cards/ItemEarning"
 import Impression from "../../components/cards/Impression" 
-import MoreStatsCard from "../../components/cards/MoreStatsCard"
+import ActiveUser from "../../components/cards/ActiveUser"
+
 
 
 function Dashboard() {
   return (
     <>
-    <Box position="absolute" top="10%" left="20%" display='flex' gap='10rem'>
-      <Box>
-      <Box >
-      <MoreStatsCard />
-      </Box>
-     <Box >
-      <LineChart />
-      </Box>
-      </Box>
-      <Box display='flex' flexDirection='column' gap='2rem'>
-        <Box>
-      <Earning />
-      </Box>
-      <Box>
-      <ItemEarning />
-      </Box>
-      <Box>
+    <Box 
+      display='flex' 
+      justifyContent='center' 
+      alignItems='flex-start'
+      sx={{
+        width: '100%',
+        position: 'relative', 
+      }}
+    >
+      <Stack direction={"column"} spacing={3} sx={{ maxWidth: 'fit-content' }}>
+        <ActiveUser />
+        <LineChart />
+      </Stack>
+      
+      <Stack 
+        direction="column" 
+        spacing={3} 
+        sx={{
+          position:"fixed", 
+          right:"5rem",
+          width: 'auto'
+        }}
+      >
+        <Earning />
+        <ItemEarning />
         <Impression />
-      </Box>
-      </Box>
-    
+      </Stack>
     </Box>
+    
+
     </>
   )
 }

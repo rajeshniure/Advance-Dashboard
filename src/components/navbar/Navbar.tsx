@@ -11,7 +11,18 @@ const Navbar = () => {
   const theme = useTheme();
   return (
     
-      <Toolbar sx={{ display: "flex", position:'absolute', left:'20rem' ,gap:10 }}>
+      <Toolbar sx={{ 
+        display: "flex", 
+        position: 'fixed', 
+        top: 0,
+        left: 280, // Match sidebar width exactly
+        right: 0,
+        gap: 10,
+        backgroundColor:theme.palette.customBackgrounds.background2,
+        // borderBottom: `1px solid ${theme.palette.customBackgrounds.border}`,
+        zIndex: theme.zIndex.appBar,
+        height: 64 // Standard toolbar height
+      }}>
         <Typography variant="h6" sx={{color:theme.palette.primary.main}} >
           Dashboard
         </Typography>
@@ -21,6 +32,7 @@ const Navbar = () => {
             borderRadius: 3,
             border:1,
             borderColor:theme.palette.grey[400],
+            backgroundColor: theme.palette.background.default,  
             width: { xs: "100%", sm: "auto" },
             display: "flex",
             alignItems: "center",

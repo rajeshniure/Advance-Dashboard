@@ -11,7 +11,7 @@ function App() {
 
       <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" ,backgroundColor:theme.palette.customBackgrounds.background2}}>
         <Navbar />
-        <Box sx={{ display: "flex", flex: 1 }}>
+        <Box sx={{ display: "flex", flex: 1, mt: 8 }}>
           <Sidebar />
           <Box sx={{ flex: 1, p: 2 }}>
             <AppRoutes />

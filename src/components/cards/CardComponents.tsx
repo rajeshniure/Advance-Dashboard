@@ -40,13 +40,13 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   return (
     <Card sx={{ width: 160, backgroundColor: "customBackgrounds.neutral" }}>
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <Box display="flex" alignItems="center" gap={2}>
+        <Box display="flex" alignItems="center" gap={2} mb={2}>
           <img src={imageSrc} alt={`${title} icon`} />
           <Typography variant="body2" color="text.primary">
             {title}
           </Typography>
         </Box>
-        <Typography variant="h1" fontWeight="bold">
+        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"2.5rem"}}>
           {value}
         </Typography>
         <LinearProgress
