@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import type { TextFieldProps } from '@mui/material/TextField';
-
 import {
   IconButton,
   InputAdornment,
@@ -20,12 +19,11 @@ const CustomTextField = ({
 
   return (
     <TextField
- 
       label={label}
       type={isPassword ? (showPassword ? 'text' : 'password') : type}
       placeholder={placeholder}
       variant="outlined"
-       slotProps={{
+      slotProps={{
         input: {
           endAdornment: isPassword && (
             <InputAdornment position="end">
@@ -41,4 +39,4 @@ const CustomTextField = ({
   );
 };
 
-export default CustomTextField;
+export default CustomTextField; 

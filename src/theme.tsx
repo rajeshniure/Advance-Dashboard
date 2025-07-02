@@ -37,6 +37,7 @@ declare module "@mui/material/styles" {
 const Theme = {
   palette: {
     primary: { main: "#6E39CB" },
+    secondary: { main: "#DECCFE" },
     text: {
       primary: "#3A3541",
       secondary: "#89868D",
