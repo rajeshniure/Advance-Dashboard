@@ -8,10 +8,10 @@ import theme from "../../theme"
 
 const ActiveUser = () => {
   return (
-    <Card sx={{pb:'2rem',px:"1rem",backgroundColor:theme.palette.background.default}}>  
-    <Typography sx={{py:2}}>Active users right now</Typography>
-      <Stack direction="column" spacing={2} >
-        <Stack direction="row" spacing={6}>
+    <Card sx={{pb:'2rem',px:"3rem",backgroundColor:theme.palette.background.default}}>  
+    <Typography variant="body1" sx={{py:2, fontSize:"1.4rem"}}>Active users right now</Typography>
+      <Stack direction="column" spacing={5} >
+        <Stack direction="row" spacing={9}>
         <SmallLine /> 
         <Barchart />
         </Stack>

@@ -71,8 +71,8 @@ const GradientBarChart = () => {
   return (
     <Card
       sx={{
-        width: 670,
-        height: 220,
+        width: 830,
+        height: 420,
         borderRadius: 3,
         background: theme.gradients.primary,
         p: 3,

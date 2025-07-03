@@ -38,15 +38,15 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   progressColor = "primary",
 }) => {
   return (
-    <Card sx={{ width: 160, backgroundColor: "customBackgrounds.neutral" }}>
-      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+    <Card sx={{ width: 240, backgroundColor: "customBackgrounds.neutral" }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Box display="flex" alignItems="center" gap={2} mb={2}>
-          <img src={imageSrc} alt={`${title} icon`} />
-          <Typography variant="body2" color="text.primary">
+          <img src={imageSrc} alt={`${title} icon` } width={60} />
+          <Typography variant="body1" color="text.primary" sx={{fontSize:"1.5rem"}}>
             {title}
           </Typography>
         </Box>
-        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"2.5rem"}}>
+        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"3.2rem"}}>
           {value}
         </Typography>
         <LinearProgress
@@ -141,28 +141,44 @@ export const DesignToolCard = () => (
   </Card>
 );
 
-export const WebDevCard = () => (
+
+interface WebDevCardProps {
+  title: string;
+  teamName: string;
+  duration: string;
+  attachments: number;
+  comments: number;
+}
+
+export const WebDevCard: React.FC<WebDevCardProps> = ({
+  title,
+  teamName,
+  duration,
+  attachments,
+  comments,
+
+}) => (
   <Card sx={{ width: 300, mt: 3, backgroundColor: "customBackgrounds.neutral" }}>
     <CardContent>
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Box>
-          <Typography fontWeight="medium">Webdev</Typography>
+          <Typography fontWeight="medium">{title}</Typography>
           <Typography variant="body2" color="text.secondary">
-            Cisco Team
+            {teamName}
           </Typography>
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
           <img src={clock} alt="Clock" />
-          <Typography variant="caption">12 Days</Typography>
+          <Typography variant="caption">{duration}</Typography>
         </Stack>
       </Box>
 
       <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
         <Box display="flex" alignItems="center" gap={1}>
           <AttachFile sx={{ fontSize: 18 }} />
-          <Typography variant="body2">7</Typography>
+          <Typography variant="body2">{attachments}</Typography>
           <ChatBubbleOutline sx={{ fontSize: 18 }} />
-          <Typography variant="body2">8</Typography>
+          <Typography variant="body2">{comments}</Typography>
         </Box>
         <img src={plusman} alt="Add person" />
       </Box>

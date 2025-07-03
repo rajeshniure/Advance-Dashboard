@@ -7,7 +7,7 @@ import ItemsIcon from '../../assets/image/Items.svg';
 
 const MoreStatsCard = () => {
   return (
-<Stack direction="row" spacing={7} >
+<Stack sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}} >
 <StatsCard
   imageSrc={usersIcon}
   title="Users"

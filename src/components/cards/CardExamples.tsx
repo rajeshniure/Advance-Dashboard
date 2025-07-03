@@ -3,7 +3,7 @@ import {
   // StatsCard,
   ProfileCard,
   DesignToolCard,
-  WebDevCard,
+  // WebDevCard,
   DesignReviewCard,
   IphoneCard
 } from "./CardComponents";
@@ -13,7 +13,7 @@ const CardExamples = () => (
     {/* <StatsCard /> */}
     <ProfileCard />
     <DesignToolCard />
-    <WebDevCard />
+    {/* <WebDevCard /> */}
     <DesignReviewCard />
     <IphoneCard />
   </Box>

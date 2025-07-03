@@ -9,7 +9,7 @@ const Earning = () => {
     justifyContent:"center",
     alignItems:"center",
     gap:3,
-    width:"15rem",
+    width:"17rem",
     padding:"1rem",
     borderRadius: 3,
     backgroundColor:"white",
@@ -20,8 +20,8 @@ const Earning = () => {
         <Typography variant='h1' sx={{color:theme.palette.primary.main ,fontSize:"3.5rem"}}>
             735.2$
         </Typography>
-        <Typography variant='body2'sx={{textAlign:"center", color:theme.palette.text.secondary}}>
-            update your payout method in Setting
+        <Typography variant='body1'sx={{textAlign:"center", color:theme.palette.text.secondary}}>
+            update your payout <br/>method in Setting
         </Typography>
         <Button
         size="small"

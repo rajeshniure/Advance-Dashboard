@@ -68,7 +68,7 @@ const Impression = () => {
     <Card
       elevation={2}
       sx={{
-        width: "15rem",
+        width: "17rem",
         borderRadius: 3,
         p: 1,
         pb:0,

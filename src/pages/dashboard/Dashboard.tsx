@@ -13,6 +13,7 @@ function Dashboard() {
     <Box 
       display='flex' 
       justifyContent='center' 
+      right='1.2rem'
       alignItems='flex-start'
       sx={{
         width: '100%',
@@ -29,7 +30,7 @@ function Dashboard() {
         spacing={3} 
         sx={{
           position:"fixed", 
-          right:"5rem",
+          right:"3rem",
           width: 'auto'
         }}
       >

@@ -9,7 +9,6 @@ import { styled } from "@mui/material/styles";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-// Simplified Styled Component
 const StyledListItemButton = styled(ListItemButton)<{
   level: number;
 }>(({ theme, level }) => ({

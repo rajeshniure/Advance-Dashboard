@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Navbar = () => {
+const Navbar = ({title}:{title:string}) => {
   const theme = useTheme();
   return (
     
@@ -15,16 +15,16 @@ const Navbar = () => {
         display: "flex", 
         position: 'fixed', 
         top: 0,
-        left: 280, // Match sidebar width exactly
+        left: 280,
         right: 0,
         gap: 10,
         backgroundColor:theme.palette.customBackgrounds.background2,
         // borderBottom: `1px solid ${theme.palette.customBackgrounds.border}`,
         zIndex: theme.zIndex.appBar,
-        height: 64 // Standard toolbar height
+        height: 64
       }}>
         <Typography variant="h6" sx={{color:theme.palette.primary.main}} >
-          Dashboard
+          {title}
         </Typography>
         <Box
           sx={{

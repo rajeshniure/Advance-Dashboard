@@ -13,7 +13,7 @@ const Earning = () => {
     sx={{display:"flex",
     flexDirection:"column",
     gap:2,
-    width:"15rem",
+    width:"17rem",
     padding:"1rem",
     paddingLeft:"2rem",
     backgroundColor:"white",

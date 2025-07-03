@@ -83,11 +83,11 @@ const SalesByAgeChart = () => {
   };
 
   return (
-    <Card elevation={2} sx={{ width: '60rem', p: 2, position: 'relative',backgroundColor: 'white' }}>
-      <Typography sx={{ fontSize: 19, mb: 2, color: 'black' }}>
+    <Card elevation={2} sx={{ width: '75rem', px: 6, py:3, position: 'relative',backgroundColor: 'white' }}>
+      <Typography sx={{ fontSize: 25, mb: 2, color: 'black' }}>
         Sales by Age
       </Typography>
-      <Box sx={{ height: '16rem' }}>
+      <Box sx={{ height: '25rem' }}>
         <Line data={data} options={options} />
       </Box>
     </Card>
