@@ -1,42 +1,41 @@
+import React, { useState } from "react";
+import { Box, Stack, TextField, Modal } from "@mui/material";
+import CustomButton from "../buttons/CustomButton";
+import { z } from "zod";
 
-import React, { useState } from 'react';
-import { Box, Stack, TextField, Modal } from '@mui/material';
-import CustomButton from '../buttons/CustomButton';
-import { z } from 'zod';
-
-
-export interface CardData {
-  title: string;
-  teamName: string;
-  duration: string;
-  attachments: number;
-  comments: number;
-}
 
 
 const schema = z.object({
-  title: z.string().min(1, 'Title is required'),
-  teamName: z.string().min(1, 'Team name is required'),
-  duration: z.string().min(1, 'Duration is required'),
-  attachments: z.coerce.number().min(0, 'Must be a number'),
-  comments: z.coerce.number().min(0, 'Must be a number'),
+  title: z.string().nonempty("Title is required"),
+  teamName: z.string().min(1, "Team name is required"),
+  duration: z.string().min(1, "Duration is required"),
+  attachments: z.number().min(0, "Must be a number"),
+  comments: z.coerce.number().min(0, "Must be a number"),
 });
+
+type cardData1 = z.infer<typeof schema> ;
 
 interface AddTaskModalProps {
   open: boolean;
   onClose: () => void;
-  onAdd: (data: CardData) => void;
+  onAdd: (data: cardData1) => void;
 }
 
-const AddTaskModal: React.FC<AddTaskModalProps> = ({ open, onClose, onAdd }) => {
-  const [form, setForm] = useState<CardData>({
-    title: '',
-    teamName: '',
-    duration: '',
+const AddTaskModal: React.FC<AddTaskModalProps> = ({
+  open,
+  onClose,
+  onAdd,
+}) => {
+  const [form, setForm] = useState<cardData1>({
+    title: "",
+    teamName: "",
+    duration: "",
     attachments: 0,
     comments: 0,
   });
-  const [errors, setErrors] = useState<Partial<Record<keyof CardData, string>>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof cardData1, string>>>(
+    {}
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -61,7 +60,13 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ open, onClose, onAdd }) => 
 
     setErrors({});
     onAdd(result.data);
-    setForm({ title: '', teamName: '', duration: '', attachments: 0, comments: 0 });
+    setForm({
+      title: "",
+      teamName: "",
+      duration: "",
+      attachments: 0,
+      comments: 0,
+    });
     onClose();
   };
 
@@ -71,17 +76,38 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ open, onClose, onAdd }) => 
         width="30%"
         component="form"
         onSubmit={handleSubmit}
-        sx={{ p: 4, bgcolor: 'background.paper', borderRadius: 2, mx: 'auto', my: '10vh' }}
+        sx={{
+          p: 4,
+          bgcolor: "background.paper",
+          borderRadius: 2,
+          mx: "auto",
+          my: "10vh",
+        }}
       >
         <Stack spacing={2}>
-          <TextField name="title" label="Title" value={form.title} onChange={handleChange} />
-          <div style={{ color: 'red' }}>{errors.title}</div>
+          <TextField
+            name="title"
+            label="Title"
+            value={form.title}
+            onChange={handleChange}
+          />
+          <div style={{ color: "red" }}>{errors.title}</div>
 
-          <TextField name="teamName" label="Team Name" value={form.teamName} onChange={handleChange} />
-          <div style={{ color: 'red' }}>{errors.teamName}</div>
+          <TextField
+            name="teamName"
+            label="Team Name"
+            value={form.teamName}
+            onChange={handleChange}
+          />
+          <div style={{ color: "red" }}>{errors.teamName}</div>
 
-          <TextField name="duration" label="Duration" value={form.duration} onChange={handleChange} />
-          <div style={{ color: 'red' }}>{errors.duration}</div>
+          <TextField
+            name="duration"
+            label="Duration"
+            value={form.duration}
+            onChange={handleChange}
+          />
+          <div style={{ color: "red" }}>{errors.duration}</div>
 
           <TextField
             name="attachments"
@@ -90,7 +116,7 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ open, onClose, onAdd }) => 
             value={form.attachments}
             onChange={handleChange}
           />
-          <div style={{ color: 'red' }}>{errors.attachments}</div>
+          <div style={{ color: "red" }}>{errors.attachments}</div>
 
           <TextField
             name="comments"
@@ -99,7 +125,7 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ open, onClose, onAdd }) => 
             value={form.comments}
             onChange={handleChange}
           />
-          <div style={{ color: 'red' }}>{errors.comments}</div>
+          <div style={{ color: "red" }}>{errors.comments}</div>
 
           <Stack direction="row" spacing={2} justifyContent="flex-end">
             <CustomButton label="Cancel" variant="outlined" onClick={onClose} />

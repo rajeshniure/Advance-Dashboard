@@ -12,6 +12,9 @@ const pathTitleMap: Record<string, string> = {
   "/dashboard": "Dashboard",
   "/analytics": "Analytics",
   "/applications/kanban": "Kanban",
+  "/applications/wizard": "Wizard",
+  "/applications/data-tables": "Data tables",
+  "/applications/calendar": "Calendar",
 };
 
 function App() {
