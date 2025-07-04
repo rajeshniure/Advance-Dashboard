@@ -14,7 +14,7 @@ import {
 } from "@mui/icons-material";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import Oliva from "../../assets/image/Frame 1149.svg";
-import photoshopIcon from "../../assets/image/Photoshop.svg";
+// import photoshopIcon from "../../assets/image/Photoshop.svg";
 import peoplesImg from "../../assets/image/peoples.svg";
 import plusman from "../../assets/image/plusman.svg";
 import clock from "../../assets/icon/clock.png";
@@ -108,38 +108,81 @@ export const ProfileCard = () => (
 );
 
 export const DesignToolCard = () => (
-  <Card sx={{ width: 300, mt: 3, backgroundColor: "customBackgrounds.neutral" }}>
-    <CardContent>
-      <Box display="flex" justifyContent="space-between">
-        <Stack direction="row" spacing={1} alignItems="center">
-          <img src={photoshopIcon} alt="Photoshop" />
+  <Box sx={{width:"100%", backgroundColor: "customBackgrounds.neutral" ,borderBottom:"1px solid", pb:"1.5rem"}}>
+  <Box display="flex" justifyContent="space-between">
+      <Box>
+      <Typography variant="h6">
+      Overview      
+      </Typography>
+        <Typography variant="body2">
+        Edit or modify all card as you want
+      </Typography>
+      </Box>
+<Box display="flex">
           <Stack direction={"column"} spacing={0.5}>
             <Typography fontWeight="bold">Design tools</Typography>
             <img src={peoplesImg} alt="People" />
           </Stack>
-        </Stack>
         <IconButton>
           <MoreVert />
         </IconButton>
-      </Box>
+ </Box>
+ </Box>
 
-      <Typography mt={2} variant="body2">
-        Constantly growing. We're constantly making mistakes from which we learn and improve
-      </Typography>
+  
+  </Box>
+);       
 
-      <Box>
-        <Box display="flex" justifyContent="space-between" mt={2}>
-          <Typography variant="body2" sx={{ fontWeight: '700' }}>10 </Typography>
-          <Typography variant="body2" sx={{ fontWeight: '700' }}>02.08.22</Typography>
-        </Box>
-        <Box display="flex" justifyContent="space-between">
-          <Typography variant="caption">Participants</Typography>
-          <Typography variant="caption">Due date</Typography>
-        </Box>
-      </Box>
-    </CardContent>
-  </Card>
-);
+
+// export const DesignToolCard = () => (
+//   <Card sx={{ width: 1000, mt: 3, backgroundColor: "customBackgrounds.neutral" }}>
+//     <CardContent>
+//       <Box>
+//       <Typography mt={2} variant="h6">
+//       Overview      
+//       </Typography>
+//         <Typography mt={2} variant="body2">
+//         Constantly growing. We're constantly making mistakes from which we learn and improve
+//       </Typography>
+//       </Box>
+//       <Box display="flex" justifyContent="space-between">
+//           <Stack direction={"column"} spacing={0.5}>
+//             <Typography fontWeight="bold">Design tools</Typography>
+//             <img src={peoplesImg} alt="People" />
+//           </Stack>
+//         <IconButton>
+//           <MoreVert />
+//         </IconButton>
+//       </Box>
+
+      
+//       <Box>
+//         <Box display="flex" justifyContent="space-between" mt={2}>
+//           <Typography variant="body2" sx={{ fontWeight: '700' }}>10 </Typography>
+//           <Typography variant="body2" sx={{ fontWeight: '700' }}>02.08.22</Typography>
+//         </Box>
+//         <Box display="flex" justifyContent="space-between">
+//           <Typography variant="caption">Participants</Typography>
+//           <Typography variant="caption">Due date</Typography>
+//         </Box>
+//       </Box>
+//     </CardContent>
+//   </Card>
+// );       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 interface WebDevCardProps {
