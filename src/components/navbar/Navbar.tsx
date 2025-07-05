@@ -10,18 +10,16 @@ import SearchIcon from "@mui/icons-material/Search";
 const Navbar = ({title}:{title:string}) => {
   const theme = useTheme();
   return (
-    
+   <Box>
       <Toolbar sx={{ 
         display: "flex", 
-        position: 'fixed', 
-        top: 0,
-        left: 280,
-        right: 0,
         gap: 10,
+        position:"fixed",
+        width:"100%",
+        top:0,
         backgroundColor:theme.palette.customBackgrounds.background2,
         // borderBottom: `1px solid ${theme.palette.customBackgrounds.border}`,
         zIndex: theme.zIndex.appBar,
-        height: 64
       }}>
         <Typography variant="h6" sx={{color:theme.palette.primary.main}} >
           {title}
@@ -46,6 +44,7 @@ const Navbar = ({title}:{title:string}) => {
           <SearchIcon sx={{ color: "action.active", mr: 1 }} />
         </Box>
       </Toolbar>
+    </Box>
   );
 };
 

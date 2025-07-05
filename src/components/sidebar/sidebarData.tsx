@@ -6,7 +6,6 @@ import {
   Folder,
 } from "@mui/icons-material";
 
-// Define the sidebar menu structure
 export const sidebarMenuItems = [
   {
     id: "home",

@@ -18,19 +18,20 @@ const Sidebar = () => {
     <Drawer
       variant="permanent"
       anchor="left"
+      sx={{
+        width: "280px",
+      }}
       slotProps={{
         paper: {
           elevation: 0,
           sx: {
-            width: 280,
+            width: "280px",
             bgcolor: theme.palette.background.default,
             borderRight: `1px solid ${theme.palette.customBackgrounds.border}`,
             '&::-webkit-scrollbar': {
               display: 'none',
             },
             scrollbarWidth: 'none',
-            display: 'flex',
-            flexDirection: 'column',
           }
         }
       }}

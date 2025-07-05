@@ -12,27 +12,15 @@ function Dashboard() {
     <>
     <Box 
       display='flex' 
-      justifyContent='center' 
-      right='1.2rem'
-      alignItems='flex-start'
-      sx={{
-        width: '100%',
-        position: 'relative', 
-      }}
+      gap={3}
     >
-      <Stack direction={"column"} spacing={3} sx={{ maxWidth: 'fit-content' }}>
+      <Stack direction={"column"} spacing={3}>
         <ActiveUser />
         <LineChart />
-      </Stack>
-      
+      </Stack>  
       <Stack 
         direction="column" 
         spacing={3} 
-        sx={{
-          position:"fixed", 
-          right:"3rem",
-          width: 'auto'
-        }}
       >
         <Earning />
         <ItemEarning />
