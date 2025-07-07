@@ -21,13 +21,18 @@ import clock from "../../assets/icon/clock.png";
 import calender from "../../assets/icon/calender.png";
 import CustomButton from "../buttons/CustomButton";
 import { LinearProgress } from "@mui/material";
+import type { SxProps, Theme } from "@mui/material";
+
 
 interface StatsCardProps {
   imageSrc: string;
-  title: string;
+  title?: string;
   value: string | number;
-  progressValue: number;
+  progressValue?: number;
   progressColor?: "primary" | "success" | "info" | "error" | "info" | "warning";
+  valueSx?: SxProps<Theme>;
+  cardSx?: SxProps<Theme>;
+  imgSx?: SxProps<Theme>;
 }
 
 export const StatsCard: React.FC<StatsCardProps> = ({
@@ -36,27 +41,32 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   value,
   progressValue,
   progressColor = "primary",
+  valueSx,
+  cardSx,
+  imgSx
 }) => {
   return (
-    <Card sx={{ width: 240, backgroundColor: "customBackgrounds.neutral" }}>
+    <Box sx={{ width: 240, backgroundColor: "customBackgrounds.neutral", border: 1,borderRadius: 2, borderColor: "customBackgrounds.border" ,...cardSx}}>
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Box display="flex" alignItems="center" gap={2} mb={2}>
-          <img src={imageSrc} alt={`${title} icon` } width={60} />
+          <Box component="img" src={imageSrc} alt={`${title} icon`} width={60} sx={{...imgSx}} />
           <Typography variant="body1" color="text.primary" sx={{fontSize:"1.5rem"}}>
             {title}
           </Typography>
         </Box>
-        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"3.2rem"}}>
+        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"3.2rem", ...valueSx}}>
           {value}
         </Typography>
+        {progressValue !== undefined && (
         <LinearProgress
           variant="determinate"
           value={progressValue}
           color={progressColor}
           sx={{ height: 6, borderRadius: 5 }}
         />
+      )}
       </CardContent>
-    </Card>
+    </Box>
   );
 };
 

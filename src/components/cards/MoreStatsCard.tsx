@@ -7,7 +7,7 @@ import ItemsIcon from '../../assets/image/Items.svg';
 
 const MoreStatsCard = () => {
   return (
-<Stack sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}} >
+<Stack sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', gap:2}} >
 <StatsCard
   imageSrc={usersIcon}
   title="Users"

@@ -9,9 +9,9 @@ type MainCardProps = {
 };
 
 const MainCard = ({ title, subtitle, children }: MainCardProps) => (
-  <Card sx={{ maxWidth: 600, mx: 'auto', mt: 5, p: 2, borderRadius: 3, backgroundColor: 'customBackgrounds.neutral' }}>
+  <Card sx={{ maxWidth: 600, mx: 'auto', mt: 3, p: 2, borderRadius: 3, backgroundColor: 'customBackgrounds.neutral' }}>
     <CardContent>
-      <Box mb={4}>
+      <Box mb={3}>
         <Typography variant="h5" fontWeight={600} textAlign="center">
           {title}
         </Typography>

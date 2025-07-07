@@ -13,6 +13,8 @@ const AppRoutes = () => (
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="applications/kanban" element={<Kanban />} />
         <Route path="applications/wizard" element={<Wizard />} />
+        {/* <Route path = "applications/data-tables" element={datatables} /> */}
+        <Route path="*" element={<h1>404</h1>} />
       </Route>
     </Routes>
   </BrowserRouter>

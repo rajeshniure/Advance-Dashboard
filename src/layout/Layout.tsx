@@ -4,7 +4,9 @@ import Navbar from "../components/navbar/Navbar";
 import { Box } from "@mui/material";
 import theme from "../theme";
 
-const pathTitleMap: Record<string, string> = {
+type PathTitleMap = Record<string, string>;
+
+const pathTitleMap: PathTitleMap = {
   "/": "Home",
   "/dashboard": "Dashboard",
   "/analytics": "Analytics",
