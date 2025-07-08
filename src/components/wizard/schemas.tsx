@@ -1,6 +1,6 @@
-import { z } from "zod";
+import * as z from "zod";
 
-const schema = z.object({
+export const basicInfoSchema = z.object({
   firstName: z
     .string()
     .nonempty("First name is required")
@@ -42,24 +42,22 @@ const schema = z.object({
     .nonempty("Postal code is required")
     .max(10, "Postal code must not exceed 10 characters")
     .regex(/^\d{4,10}$/, "Postal code must be numeric and 4 to 10 digits long"),
-
-  streetname: z
-    .string()
-    .nonempty("Street name is required")
-    .max(100, "Street name cannot be longer than 100 characters")
-    .regex(/^[A-Za-z\s]+$/, "Street name must contain only letters and spaces"),
-
-  streetno: z
-    .string()
-    .nonempty("Street number is required")
-    .max(10, "Street number must not exceed 10 characters")
-    .regex(/^\d+$/, "Street number must be numeric"),
-
-  country: z
-    .string()
-    .nonempty("Country is required")
-    .max(100, "Country name cannot be longer than 100 characters")
-    .regex(/^[A-Za-z\s]+$/, "Country name must contain only letters and spaces"),
 });
 
-export default schema;
+export const accountSchema = z.object({
+  activities: z.array(z.string()).min(1, "Select at least one"),
+});
+
+export const addressSchema = z.object({
+  street: z.string().min(1, "Street is required"),
+  postal: z.string().min(1, "Postal code required"),
+  addressCity: z.string().min(1, "City is required"),
+  country: z.string().min(1, "Select a country"),
+});
+
+
+export const unifiedWizardSchema = basicInfoSchema.merge(accountSchema).merge(addressSchema);
+
+export type UnifiedWizardFormData = z.infer<typeof unifiedWizardSchema>;
+
+export default unifiedWizardSchema;

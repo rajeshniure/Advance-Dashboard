@@ -1,22 +1,23 @@
-import { Grid, Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
 type Props = {
-    label: string;
-  handleNext?: () => void;
-  handleSubmit?: () => void
+  label: string;
+  handleSubmit: () => void;
+  handleBack?: () => void;
 };
 
-const FormButtons = ({ handleNext, label,handleSubmit }: Props) => {
+const FormButtons: React.FC<Props> = ({ label, handleSubmit, handleBack }) => {
   return (
-    <Grid size={{ xs: 12 }} display="flex" justifyContent="flex-end" mt={2}>
-      <Button
-        variant="contained"
-        sx={{ borderRadius: 2, px: 4 }}
-        onClick={handleNext || handleSubmit}
-      >
+    <Box textAlign="right" mt={3}>
+      {handleBack && (
+        <Button onClick={handleBack} sx={{ mr: 2 }}>
+          Back
+        </Button>
+      )}
+      <Button type="submit" variant="contained" onClick={handleSubmit}>
         {label}
       </Button>
-    </Grid>
+    </Box>
   );
 };
 

@@ -1,35 +1,52 @@
-import { Box, } from '@mui/material'
-import BasicInfoForm from '../../components/wizard/BasicInfoForm'
-import AccountStep from '../../components/wizard/AccountStep'
-import AddressStep from '../../components/wizard/AddressStep'
-import WizardStepper from '../../components/wizard/WizardStepper'
-import  { useState } from 'react';
-
+// components/wizard/Wizard.tsx
+import { useState } from "react";
+import { Box } from "@mui/material";
+import StepperHeader from "../../components/wizard/StepperHeader";
+import BasicInfoStep from "../../components/wizard/BasicInfoStep";
+import AccountStep from "../../components/wizard/AccountStep";
+import AddressStep from "../../components/wizard/AddressStep";
+import { useUnifiedWizardForm } from "../../components/wizard/hooks/useUnifiedWizardForm";
 
 const Wizard = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [step, setStep] = useState(0);
+  const formHook = useUnifiedWizardForm();
 
-  const handleNext = () => {
-  setActiveStep((prev) => prev + 1);
-};
-
-  const renderStepContent = (step: number) => {
-    switch (step) {
-      case 0:
-        return <BasicInfoForm handleNext={handleNext}/>;
-      case 1:
-        return <AccountStep handleNext={handleNext} />;
-      case 2:
-        return <AddressStep />;
-      default:
-        return null;
+  const handleNext = async () => {
+    const isStepValid = await formHook.validateStep(step);
+    if (isStepValid) {
+      setStep((prev) => prev + 1);
     }
   };
 
+  const handleBack = () => setStep((prev) => prev - 1);
+
+  const handleFinalSubmit = () => {
+    formHook.handleSubmit();
+  };
+
   return (
-    <Box>
-      <WizardStepper activeStep={activeStep} onStepClick={setActiveStep} />
-      {renderStepContent(activeStep)}
+    <Box sx={{ p: 4 }}>
+      <StepperHeader activeStep={step} />
+      {step === 0 && (
+        <BasicInfoStep 
+          onNext={handleNext} 
+          formHook={formHook}
+        />
+      )}
+      {step === 1 && (
+        <AccountStep 
+          onNext={handleNext} 
+          onBack={handleBack} 
+          formHook={formHook}
+        />
+      )}
+      {step === 2 && (
+        <AddressStep 
+          onBack={handleBack}
+          onSubmit={handleFinalSubmit}
+          formHook={formHook}
+        />
+      )}
     </Box>
   );
 };

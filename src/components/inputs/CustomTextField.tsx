@@ -12,6 +12,7 @@ const CustomTextField = ({
   type,
   label,
   placeholder,
+  slotProps,
   ...props
 }: TextFieldProps) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,7 +25,9 @@ const CustomTextField = ({
       placeholder={placeholder}
       variant="outlined"
       slotProps={{
+        ...slotProps,
         input: {
+          ...slotProps?.input,
           endAdornment: isPassword && (
             <InputAdornment position="end">
               <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
