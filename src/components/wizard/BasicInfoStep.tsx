@@ -10,7 +10,7 @@ interface BasicInfoFormProps {
 }
 
 const BasicInfoForm: React.FC<BasicInfoFormProps> = ({ onNext, formHook }) => {
-  const { formData, errors, handleChange } = formHook;
+  const { formData, handleChange } = formHook;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const BasicInfoForm: React.FC<BasicInfoFormProps> = ({ onNext, formHook }) => {
     >
       <form onSubmit={handleSubmit}>
         <ProfileSection />
-        <BasicInfoFields formData={formData} errors={errors} handleChange={handleChange} />
+        <BasicInfoFields formData={formData} handleChange={handleChange} />
         <FormButtons label="Next" handleSubmit={() => handleSubmit} />
       </form>
     </MainCard>

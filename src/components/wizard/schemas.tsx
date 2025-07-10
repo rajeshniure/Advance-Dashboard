@@ -1,6 +1,7 @@
 import * as z from "zod";
 
-export const basicInfoSchema = z.object({
+// Step 1: Basic Info Schema
+const basicInfoSchema = z.object({
   firstName: z
     .string()
     .nonempty("First name is required")
@@ -44,20 +45,25 @@ export const basicInfoSchema = z.object({
     .regex(/^\d{4,10}$/, "Postal code must be numeric and 4 to 10 digits long"),
 });
 
-export const accountSchema = z.object({
-  activities: z.array(z.string()).min(1, "Select at least one"),
-});
 
-export const addressSchema = z.object({
-  street: z.string().min(1, "Street is required"),
-  postal: z.string().min(1, "Postal code required"),
-  addressCity: z.string().min(1, "City is required"),
-  country: z.string().min(1, "Select a country"),
-});
+const accountSchema = basicInfoSchema.merge(
+  z.object({
+    activities: z.array(z.string()).min(1, "Select at least one"),
+  })
+);
 
 
-export const unifiedWizardSchema = basicInfoSchema.merge(accountSchema).merge(addressSchema);
+const addressSchema = accountSchema.merge(
+  z.object({
+    street: z.string().min(1, "Street is required"),
+    postal: z.string().min(1, "Postal code required"),
+    addressCity: z.string().min(1, "City is required"),
+    country: z.string().min(1, "Select a country"),
+  })
+);
 
+
+export const unifiedWizardSchema = addressSchema;
 export type UnifiedWizardFormData = z.infer<typeof unifiedWizardSchema>;
 
 export default unifiedWizardSchema;

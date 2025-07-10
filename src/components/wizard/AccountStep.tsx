@@ -10,7 +10,7 @@ interface Props {
 }
 
 const AccountStep: React.FC<Props> = ({ onNext, onBack, formHook }) => {
-  const { formData, errors, handleChange } = formHook;
+  const { formData, handleChange } = formHook;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,6 @@ const AccountStep: React.FC<Props> = ({ onNext, onBack, formHook }) => {
       <form onSubmit={handleSubmit}>
         <AccountFields
           formData={formData}
-          errors={errors}
           handleChange={handleChange}
         />
         <FormButtons label="Next" handleSubmit={() => handleSubmit} handleBack={onBack} />

@@ -27,7 +27,7 @@ import type { SxProps, Theme } from "@mui/material";
 interface StatsCardProps {
   imageSrc: string;
   title?: string;
-  value: string | number;
+  value?: string | number;
   progressValue?: number;
   progressColor?: "primary" | "success" | "info" | "error" | "info" | "warning";
   valueSx?: SxProps<Theme>;

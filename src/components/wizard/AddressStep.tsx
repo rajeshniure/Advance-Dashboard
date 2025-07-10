@@ -10,7 +10,7 @@ interface Props {
 }
 
 const AddressStep: React.FC<Props> = ({ onBack, onSubmit, formHook }) => {
-  const { formData, errors, handleChange } = formHook;
+  const { formData, handleChange } = formHook;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,6 @@ const AddressStep: React.FC<Props> = ({ onBack, onSubmit, formHook }) => {
       <form onSubmit={handleSubmit}>
         <AddressInfoFields
           formData={formData}
-          errors={errors}
           handleChange={handleChange}
         />
         <FormButtons label="Submit" handleSubmit={() => handleSubmit} handleBack={onBack} />

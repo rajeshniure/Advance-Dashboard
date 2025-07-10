@@ -3,6 +3,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { unifiedWizardSchema, type UnifiedWizardFormData } from "../schemas";
 
 export const useUnifiedWizardForm = () => {
+  const form = useForm<UnifiedWizardFormData>({
+    resolver: zodResolver(unifiedWizardSchema),
+    defaultValues: {
+      activities: [],
+    }
+  });
+
+
+
   const {
     handleSubmit,
     formState: { errors },
@@ -10,22 +19,7 @@ export const useUnifiedWizardForm = () => {
     setValue,
     trigger,
     getValues,
-  } = useForm<UnifiedWizardFormData>({
-    resolver: zodResolver(unifiedWizardSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      dob: "",
-      city: "",
-      postalCode: "",
-      activities: [],
-      street: "",
-      postal: "",
-      addressCity: "",
-      country: "",
-    },
-  });
+  } = form;
 
   const handleChange = (field: keyof UnifiedWizardFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
     if (field === "activities") {
@@ -60,11 +54,13 @@ export const useUnifiedWizardForm = () => {
   };
 
   return {
+    form,
     formData: watch(),
     errors,
     handleChange,
     validateStep,
     handleSubmit: handleSubmit(onSubmit),
+    
   };
 };
 

@@ -1,6 +1,7 @@
-// components/wizard/Wizard.tsx
+
 import { useState } from "react";
 import { Box } from "@mui/material";
+import { FormProvider } from "react-hook-form";
 import StepperHeader from "../../components/wizard/StepperHeader";
 import BasicInfoStep from "../../components/wizard/BasicInfoStep";
 import AccountStep from "../../components/wizard/AccountStep";
@@ -25,29 +26,31 @@ const Wizard = () => {
   };
 
   return (
-    <Box sx={{ p: 4 }}>
-      <StepperHeader activeStep={step} />
-      {step === 0 && (
-        <BasicInfoStep 
-          onNext={handleNext} 
-          formHook={formHook}
-        />
-      )}
-      {step === 1 && (
-        <AccountStep 
-          onNext={handleNext} 
-          onBack={handleBack} 
-          formHook={formHook}
-        />
-      )}
-      {step === 2 && (
-        <AddressStep 
-          onBack={handleBack}
-          onSubmit={handleFinalSubmit}
-          formHook={formHook}
-        />
-      )}
-    </Box>
+    <FormProvider {...formHook.form}>
+      <Box sx={{ p: 4 }}>
+        <StepperHeader activeStep={step} />
+        {step === 0 && (
+          <BasicInfoStep 
+            onNext={handleNext} 
+            formHook={formHook}
+          />
+        )}
+        {step === 1 && (
+          <AccountStep 
+            onNext={handleNext} 
+            onBack={handleBack} 
+            formHook={formHook}
+          />
+        )}
+        {step === 2 && (
+          <AddressStep 
+            onBack={handleBack}
+            onSubmit={handleFinalSubmit}
+            formHook={formHook}
+          />
+        )}
+      </Box>
+    </FormProvider>
   );
 };
 

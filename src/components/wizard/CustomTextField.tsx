@@ -1,41 +1,52 @@
 import { TextField, Typography } from "@mui/material";
+import { useFormContext } from "react-hook-form";
 
 type CustomTextFieldProps = {
   label: string;
-  value: string;
+  name: string;
+  type?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   fullWidth?: boolean;
-  error?: boolean;
-  helperText?: string;
-  type?: string;
-  
 };
 
 const CustomTextField = ({
   label,
-  value,
+  name,
+  type,
   onChange,
   fullWidth = true,
-  error,
-  helperText,
-  type,
-}: CustomTextFieldProps) => (
-  <>
-    <Typography variant="body2" color="text.primary" mb={1}>
-      {label}
-    </Typography>
-    <TextField
-      placeholder={label}
-      value={value}
-      onChange={onChange}
-      fullWidth={fullWidth}
-      variant="outlined"
-      size="small"
-      error={error}
-      helperText={helperText}
-      type={type}
-    />
-  </>
-);
+}: CustomTextFieldProps) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const fieldError = errors[name];
+  const isError = !!fieldError;
+
+  return (
+    <>
+      <Typography variant="body2" color="text.primary" mb={1}>
+        {label}
+      </Typography>
+      <TextField
+        {...register(name)}
+        name={name}
+        placeholder={label}
+        onChange={onChange}
+        fullWidth={fullWidth}
+        variant="outlined"
+        size="small"
+        error={isError}
+        type={type}
+      />
+      {isError && (
+        <Typography variant="caption" color="error" mt={0.5}>
+          {fieldError?.message as string}
+        </Typography>
+      )}
+    </>
+  );
+};
 
 export default CustomTextField;
