@@ -1,28 +1,22 @@
 import { TextField, Typography } from "@mui/material";
 import { useFormContext } from "react-hook-form";
+// import type { UseFormRegisterReturn } from "react-hook-form";
 
 type CustomTextFieldProps = {
   label: string;
-  name: string;
   type?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  fullWidth?: boolean;
-};
+  name:string;
+}
 
 const CustomTextField = ({
   label,
   name,
-  type,
-  onChange,
-  fullWidth = true,
+  // onChange,
+  type = "text",
+  ...props
 }: CustomTextFieldProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-
+  const { formState: { errors }, register } = useFormContext();
   const fieldError = errors[name];
-  const isError = !!fieldError;
 
   return (
     <>
@@ -30,17 +24,18 @@ const CustomTextField = ({
         {label}
       </Typography>
       <TextField
-        {...register(name)}
-        name={name}
+        // name={name}
+        // onChange={onChange}
         placeholder={label}
-        onChange={onChange}
-        fullWidth={fullWidth}
+        fullWidth
         variant="outlined"
         size="small"
-        error={isError}
+        error={!!fieldError}
         type={type}
+        {...props}
+        {...register(name )}
       />
-      {isError && (
+      {fieldError && (
         <Typography variant="caption" color="error" mt={0.5}>
           {fieldError?.message as string}
         </Typography>
