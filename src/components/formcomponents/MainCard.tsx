@@ -1,16 +1,15 @@
 
-import { Card, Typography, Box, CardContent } from '@mui/material';
+import {  Typography, Box } from '@mui/material';
 import type { ReactNode } from 'react';
 
 type MainCardProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   children: ReactNode;
 };
 
 const MainCard = ({ title, subtitle, children }: MainCardProps) => (
-  <Card sx={{ maxWidth: 600, mx: 'auto', mt: 3, p: 2, borderRadius: 3, backgroundColor: 'customBackgrounds.neutral' }}>
-    <CardContent>
+  <Box>
       <Box mb={3}>
         <Typography variant="h5" fontWeight={600} textAlign="center">
           {title}
@@ -20,8 +19,7 @@ const MainCard = ({ title, subtitle, children }: MainCardProps) => (
         </Typography>
       </Box>
       {children}
-    </CardContent>
-  </Card>
+  </Box>
 );
 
 export default MainCard;

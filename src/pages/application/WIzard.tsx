@@ -1,56 +1,49 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, } from 'react-hook-form';
 
-import { useState } from "react";
-import { Box } from "@mui/material";
-import { FormProvider } from "react-hook-form";
-import StepperHeader from "../../components/wizard/StepperHeader";
-import BasicInfoStep from "../../components/wizard/BasicInfoStep";
-import AccountStep from "../../components/wizard/AccountStep";
-import AddressStep from "../../components/wizard/AddressStep";
-import { useUnifiedWizardForm } from "../../components/wizard/hooks/useUnifiedWizardForm";
+import { accountSchema, addressSchema, basicInfoSchema, unifiedWizardSchema, type UnifiedWizardFormData } from '../../components/wizard/schemas';
+import BasicInfoStep from '../../components/wizard/BasicInfoStep';
+import AccountStep from '../../components/wizard/AccountStep';
+import AddressStep from '../../components/wizard/AddressStep';
+import HookStepForm, {type stepsTypes} from '../../components/stepform/HookStepForm';
+
+
 
 const Wizard = () => {
-  const [step, setStep] = useState(0);
-  const formHook = useUnifiedWizardForm();
 
-  const handleNext = async () => {
-    const isStepValid = await formHook.validateStep(step);
-    if (isStepValid) {
-      setStep((prev) => prev + 1);
+  const steps : stepsTypes[] = [
+    {
+      element:<BasicInfoStep/>,
+      schema:basicInfoSchema,
+      label:"About"
+    },
+    {
+      element:<AccountStep/>,
+      schema:accountSchema,
+      label:"Account"
+    },
+    {
+      element:<AddressStep/>,
+      schema:addressSchema,
+      label:"Address"
     }
+  ]
+  const handleFormSubmit = (data: UnifiedWizardFormData) => {
+    console.log('Form Submitted Successfully!');
+    console.log('Complete Form Data:', data);
+    alert('Form Submitted Successfully!');
+    
   };
 
-  const handleBack = () => setStep((prev) => prev - 1);
 
-  const handleFinalSubmit = () => {
-    formHook.handleSubmit();
-  };
+  const methods = useForm<UnifiedWizardFormData>({ resolver: zodResolver(unifiedWizardSchema) });
+
+
+  const { formState: { isSubmitting } } = methods;
+
 
   return (
-    <FormProvider {...formHook.form}>
-      <Box sx={{ p: 4 }}>
-        <StepperHeader activeStep={step} />
-        {step === 0 && (
-          <BasicInfoStep 
-            onNext={handleNext} 
-            formHook={formHook}
-          />
-        )}
-        {step === 1 && (
-          <AccountStep 
-            onNext={handleNext} 
-            onBack={handleBack} 
-            formHook={formHook}
-          />
-        )}
-        {step === 2 && (
-          <AddressStep 
-            onBack={handleBack}
-            onSubmit={handleFinalSubmit}
-            formHook={formHook}
-          />
-        )}
-      </Box>
-    </FormProvider>
+   <HookStepForm methods={methods} handleFormSubmit={handleFormSubmit} isSubmitting={isSubmitting} steps={steps}/>
   );
 };
 

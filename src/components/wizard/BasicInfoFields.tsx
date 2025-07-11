@@ -1,80 +1,30 @@
-import React from "react";
 import { Grid } from "@mui/material";
-import CustomTextField from "../wizard/CustomTextField";
-// import type { FieldErrors } from "react-hook-form";
-import type { UnifiedWizardFormData } from "./schemas";
+import { useFormContext } from "react-hook-form";
+import CustomTextField from "../../components/formcomponents/CustomTextField";
 
-type Props = {
-  formData: UnifiedWizardFormData;
-  // errors: FieldErrors<UnifiedWizardFormData>;
-  handleChange: (field: keyof UnifiedWizardFormData) => (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+const BasicInfoFields = () => {
+  const { register } = useFormContext();
 
-const BasicInfoFields = ({ handleChange }: Props) => {
   return (
     <Grid container spacing={2}>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="firstName"
-            label="First name"
-            fullWidth
-            onChange={handleChange("firstName")}
-            // error={!!errors.firstName}
-            // helperText={errors.firstName?.message}
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="lastName"
-            label="Last name"
-            fullWidth
-            onChange={handleChange("lastName")}
-            // error={!!errors.lastName}
-            // helperText={errors.lastName?.message}
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="email"
-            label="Email Address"
-            fullWidth
-            onChange={handleChange("email")}
-            // error={!!errors.email}
-            // helperText={errors.email?.message}
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="dob"
-            label="Date of Birth"
-            fullWidth
-            onChange={handleChange("dob")}
-            // error={!!errors.dob}
-            // helperText={errors.dob?.message}
-            type="date"
-  
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="city"
-            label="City"
-            fullWidth
-            onChange={handleChange("city")}
-            // error={!!errors.city}
-            // helperText={errors.city?.message}
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <CustomTextField
-            name="postalCode"
-            label="Postal code"
-            fullWidth
-            onChange={handleChange("postalCode")}
-            // error={!!errors.postalCode}
-            // helperText={errors.postalCode?.message}
-          />
-        </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="First name" {...register("firstName")} />
+      </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="Last name" {...register("lastName")} />
+      </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="Email Address" {...register("email")} />
+      </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="Date of Birth" type="date" {...register("dob")} />
+      </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="City" {...register("city")} />
+      </Grid>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <CustomTextField label="Postal code" {...register("postalCode")} />
+      </Grid>
     </Grid>
   );
 };

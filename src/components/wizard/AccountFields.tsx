@@ -1,76 +1,69 @@
-import React from "react";
-import {
-  Grid,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Grid, Typography, Checkbox, FormControlLabel } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 import type { UnifiedWizardFormData } from "./schemas";
 import { StatsCard } from "../cards/CardComponents";
 import usersIcon from "../../assets/image/Users.svg";
 
-const options = [
-  { group: "Design", items: ["UI/UX", "Illustration", "Branding"] },
-  { group: "Develop", items: ["Frontend", "Backend", "Fullstack"] },
-  { group: "Code", items: ["JavaScript", "Python", "C++"] },
+const activities = [
+  "UI/UX",
+  "Illustration",
+  "Branding",
+  "Frontend",
+  "Backend",
+  "Fullstack",
+  "JavaScript",
+  "Python",
+  "C++",
 ];
 
+const AccountFields = () => {
+    const {
+      register,
+      formState: { errors },
+      watch,
+    } = useFormContext<UnifiedWizardFormData>();
 
-
-interface Props {
-  formData: UnifiedWizardFormData;
-  handleChange: (field: keyof UnifiedWizardFormData) => (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const AccountFields: React.FC<Props> = ({ formData, handleChange }) => {
-  const { formState: { errors } } = useFormContext<UnifiedWizardFormData>();
-  const handleCardClick = (activity: string) => {
-    const isSelected = formData.activities?.includes(activity) || false;
-    const fakeEvent = {
-      target: {
-        value: activity,
-        checked: !isSelected,
-      },
-    } as React.ChangeEvent<HTMLInputElement>;
-
-    handleChange("activities")(fakeEvent);
-  };
+    const selectedActivities = watch("activities") || [];
 
   return (
     <Grid container spacing={2}>
-      {options.map((group) =>
-        group.items.map((activity) => {
-          const isChecked = formData.activities?.includes(activity) || false;
+      {activities.map((activity) => {
+        const isChecked = selectedActivities.includes(activity);
 
-          return (
-            <Grid size={{ xs: 4}} key={`${group.group}-${activity}`}>
-              <Box
-                onClick={() => handleCardClick(activity)}
-                sx={{
-                  cursor: "pointer",
-                  border: isChecked ? "2px solid #1976d2" : "2px solid transparent",
-                  borderRadius: "8px",
-                  transition: "all 0.3s",
-                  backgroundColor: isChecked ? "#e3f2fd" : "white",
-                  display: "inline-block",
-                }}
-              >
+        return (
+          <Grid size={{ xs: 4 }} key={activity}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  {...register("activities")}
+                  value={activity}
+                  checked={isChecked}
+                  sx={{ display: "none" }}
+   
+                />
+              }
+              label={
                 <StatsCard
                   value={activity}
                   imageSrc={usersIcon}
                   valueSx={{ fontSize: "1.5rem" }}
                   imgSx={{ width: "40px" }}
                   cardSx={{
-                    width: "10rem ",
-                    backgroundColor: "transparent",
-                    boxShadow: "none",
+                    width: "11.5rem",
+                    cursor: "pointer",
+                    backgroundColor: isChecked ? "#e3f2fd" : "white",
+                    border: isChecked
+                      ? "2px solid #1976d2"
+                      : "2px solid transparent",
+                    borderRadius: "8px",
                   }}
                 />
-              </Box>
-            </Grid>
-          );
-        })
-      )}
+              }
+              sx={{ width: "100%", margin: 0 }}
+            />
+          </Grid>
+        );
+      })}
 
       {errors.activities && (
         <Grid size={{ xs: 12 }}>
