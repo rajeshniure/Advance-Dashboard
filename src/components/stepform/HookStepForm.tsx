@@ -6,7 +6,6 @@ import { ArrowBackRounded, ArrowForwardRounded } from '@mui/icons-material';
 import SubmitButton from '../formcomponents/SubmitButton';
 import StepperHeader from '../../components/formcomponents/StepperHeader';
 import { useStepper } from '../../hooks/useStepper';
-// import {type UnifiedWizardFormData } from '../../components/wizard/schemas';
 
 
 export type stepsTypes={
@@ -21,7 +20,6 @@ export interface HookStepProps {
   handleFormSubmit:(data: any) => void;
   isSubmitting: boolean,
   steps: stepsTypes[],
-
 }
 
 

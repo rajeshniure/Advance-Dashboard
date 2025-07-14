@@ -2,11 +2,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, } from 'react-hook-form';
 
 import HookStepForm, {type stepsTypes} from '../../../components/stepform/HookStepForm';
-import ProductInfo from '../../../components/ecommerceComp/productscomp/ProductInfo';
-import { mediaSchema, pricingSchema, productInfoSchema, socialSchema, unifiedSchema, type UnifiedFormData } from '../../../components/ecommerceComp/productscomp/schema';
-import Media from '../../../components/ecommerceComp/productscomp/Media';
-import Social from '../../../components/ecommerceComp/productscomp/Social';
-import Pricing from '../../../components/ecommerceComp/productscomp/Pricing';
+import ProductInfo from '../../../ecommerceComp/productscomp/ProductInfo';
+import { mediaSchema, pricingSchema, productInfoSchema, socialSchema, unifiedSchema, type UnifiedFormData } from '../../../ecommerceComp/productscomp/schema';
+import Media from '../../../ecommerceComp/productscomp/Media';
+import Social from '../../../ecommerceComp/productscomp/Social';
+import Pricing from '../../../ecommerceComp/productscomp/Pricing';
 
 
 
@@ -45,8 +45,8 @@ const NewProduct = () => {
   const methods = useForm<UnifiedFormData>({ resolver: zodResolver(unifiedSchema) });
 
 
-  const { formState: { isSubmitting,errors } } = methods;
-  console.log(errors)
+  const { formState: { isSubmitting } } = methods;
+
 
 
   return (

@@ -110,7 +110,7 @@ export const sidebarMenuItems = [
           {
             id: "timeline",
             label: "Timeline",
-            path: "/pages/timeline",
+            path: "/pages/projects/timeline",
           },
           {
             id: "newProject",

@@ -1,6 +1,5 @@
 import { TextField, Typography } from "@mui/material";
 import { useFormContext } from "react-hook-form";
-// import type { UseFormRegisterReturn } from "react-hook-form";
 
 type CustomTextFieldProps = {
   label: string;
@@ -24,8 +23,6 @@ const CustomTextField = ({
         {label}
       </Typography>
       <TextField
-        // name={name}
-        // onChange={onChange}
         placeholder={label}
         fullWidth
         variant="outlined"

@@ -4,6 +4,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Kanban from "../pages/application/Kanban";
 import Wizard from "../pages/application/WIzard";
 import NewProduct from "../pages/ecommerce/products/NewProduct";
+import Timeline from "../pages/pagessection/projects/Timeline";
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ const AppRoutes = () => (
         <Route path="applications/kanban" element={<Kanban />} />
         <Route path="applications/wizard" element={<Wizard />} />
         <Route path="ecommerce/products/new-product" element={<NewProduct />} />
+        <Route path = "pages/projects/timeline" element = {<Timeline />} />
         {/* <Route path = "applications/data-tables" element={datatables} /> */}
         <Route path="*" element={<h1>404</h1>} />
       </Route>

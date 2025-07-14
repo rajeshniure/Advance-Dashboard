@@ -1,10 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, } from 'react-hook-form';
 
-import { accountSchema, addressSchema, basicInfoSchema, unifiedWizardSchema, type UnifiedWizardFormData } from '../../components/wizard/schemas';
-import BasicInfoStep from '../../components/wizard/BasicInfoStep';
-import AccountStep from '../../components/wizard/AccountStep';
-import AddressStep from '../../components/wizard/AddressStep';
+import { accountSchema, addressSchema, basicInfoSchema, unifiedWizardSchema, type UnifiedWizardFormData } from '../../wizardComp/schemas';
+import BasicInfoStep from '../../wizardComp/BasicInfoStep';
+import AccountStep from '../../wizardComp/AccountStep';
+import AddressStep from '../../wizardComp/AddressStep';
 import HookStepForm, {type stepsTypes} from '../../components/stepform/HookStepForm';
 
 
