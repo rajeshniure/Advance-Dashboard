@@ -19,7 +19,7 @@ const CustomTextField = ({
 
   return (
     <>
-      <Typography variant="body2" color="text.primary" mb={1}>
+      <Typography variant="body1" color="text.primary" >
         {label}
       </Typography>
       <TextField
