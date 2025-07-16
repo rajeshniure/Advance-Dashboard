@@ -11,7 +11,6 @@ function NotFound404() {
       justifyContent="center"
       height="100vh"
       textAlign="center"
-      bgcolor="#f5f5f5"
       px={2}
     >
       <ErrorOutlineIcon color="error" sx={{ fontSize: 120, mb: 2 }} />

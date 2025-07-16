@@ -9,6 +9,8 @@ import Login from "../authentication/Login";
 import AuthLayout from "../layout/AuthLayout";
 import Logout from "../pages/logout/Logout";
 import Error from "../pageError/Error";
+import ProductList from "../pages/ecommerce/productlist/ProductList";
+import Setting from "../pages/account/Setting";
 
 const ProtectedRoute = () => {
   const token = localStorage.getItem("authToken");
@@ -31,6 +33,8 @@ const AppRoutes = () => (
         <Route path="applications/wizard" element={<Wizard />} />
         <Route path="ecommerce/products/new-product" element={<NewProduct />} />
         <Route path = "pages/projects/timeline" element = {<Timeline />} />
+        <Route path = "ecommerce/products/product-list" element = {<ProductList />} />
+        <Route path="pages/setting" element={<Setting />} />
         <Route path="auth/logout" element={<Logout />} />
         <Route path="*" element={<Error />} />
         
