@@ -16,6 +16,9 @@ const pathTitleMap: PathTitleMap = {
   "/applications/calendar": "Calendar",
   "/ecommerce/products/new-product": "New Product",
   "/pages/projects/timeline": "Timeline",
+  "/ecommerce/products/product-list": "Product List",
+  "/pages/setting": "Setting",
+
 };
 
 function Layout() {
