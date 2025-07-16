@@ -4,6 +4,7 @@ import {
   Lock,
   Home,
   Folder,
+  Logout,
 } from "@mui/icons-material";
 
 export const sidebarMenuItems = [
@@ -241,6 +242,11 @@ export const sidebarMenuItems = [
         id: "forgotPassword",
         label: "Forgot Password",
         path: "/auth/forgot-password",
+      },
+      {
+        id: "logout",
+        label: "Logout",
+        path: "/auth/logout",
       },
     ],
   },

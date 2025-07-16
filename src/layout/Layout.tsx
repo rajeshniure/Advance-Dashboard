@@ -14,6 +14,8 @@ const pathTitleMap: PathTitleMap = {
   "/applications/wizard": "Wizard",
   "/applications/data-tables": "Data Tables",
   "/applications/calendar": "Calendar",
+  "/ecommerce/products/new-product": "New Product",
+  "/pages/projects/timeline": "Timeline",
 };
 
 function Layout() {

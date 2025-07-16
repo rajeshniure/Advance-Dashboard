@@ -1,13 +1,13 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import loginImage from "../../assets/image/login.svg";
-import CustomTextField from "../../components/formcomponents/CustomTextField";
-import CustomButton from "../../components/buttons/CustomButton";
-import { Link } from "react-router-dom";
+import loginImage from "../assets/image/login.svg";
+import CustomTextField from "../components/formcomponents/CustomTextField";
+import CustomButton from "../components/buttons/CustomButton";
+import { Link, useNavigate } from "react-router-dom";
 
-import facebookImg from "../../assets/image/Facebook.svg";
-import googleImg from "../../assets/image/Googlee.svg";
-import FormWrapper from "../../singleform/FormWrapper";
-import axiosConfig from "../../../axiosConfig";
+import facebookImg from "../assets/image/Facebook.svg";
+import googleImg from "../assets/image/Googlee.svg";
+import FormWrapper from "../singleform/FormWrapper";
+import axiosConfig from "../../axiosConfig";
 
 
 interface FormData {
@@ -16,6 +16,8 @@ interface FormData {
 }
 
 function Login() {
+const navigate = useNavigate();
+
   const handleFormSubmit = async (data: FormData) => {
     try {
       const response = await axiosConfig.post("/auth/login", {
@@ -25,7 +27,7 @@ function Login() {
 
       console.log("Login Success:", response.data);
       localStorage.setItem("authToken", response.data.token);
-      alert("Login Success");
+      navigate("/");
   } catch (error: any) {
     console.error("Login Failed:", error);
   }
@@ -38,16 +40,17 @@ function Login() {
           p: 2,
           margin: "auto",
           backgroundColor: "white",
-          width: "50%",
+          width: "100%",
           borderRadius: 3,
         }}
       >
         <Grid container spacing={2}>
-          <Grid size={{ xs: 6 }}>
+          <Grid size={{ xs: 6 }} >
+            <Box px={'6rem'} pt={'4rem'}>
             <Stack spacing={2}>
               <Stack>
-                <Typography variant="h2">Login</Typography>
-                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                <Typography variant="h3">Login</Typography>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   How do i get started with login
                 </Typography>
               </Stack>
@@ -97,11 +100,12 @@ function Login() {
               />
             </Stack>
 
-            <Stack alignItems="center" marginTop={2}>
+            <Stack alignItems="center" marginTop={4}>
               <Typography color="text.secondary">
                 Don’t have an account? <Link to="#">Sign up</Link>
               </Typography>
             </Stack>
+            </Box>
           </Grid>
           <Grid size={{ xs: 6 }}>
             <img src={loginImage} alt="" width={"100%"} />
