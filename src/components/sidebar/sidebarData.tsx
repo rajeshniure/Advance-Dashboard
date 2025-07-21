@@ -4,7 +4,6 @@ import {
   Lock,
   Home,
   Folder,
-  Logout,
 } from "@mui/icons-material";
 
 export const sidebarMenuItems = [

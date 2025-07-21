@@ -11,12 +11,12 @@ import Logout from "../pages/logout/Logout";
 import Error from "../pageError/Error";
 import ProductList from "../pages/ecommerce/productlist/ProductList";
 import Setting from "../pages/account/Setting";
+import ProductDetail from "../pages/ecommerce/productlist/ProductDetail";
 
 const ProtectedRoute = () => {
   const token = localStorage.getItem("authToken");
   return token ? <Outlet /> : <Navigate to="/auth/login" replace />;
 };
-
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -32,8 +32,10 @@ const AppRoutes = () => (
         <Route path="applications/kanban" element={<Kanban />} />
         <Route path="applications/wizard" element={<Wizard />} />
         <Route path="ecommerce/products/new-product" element={<NewProduct />} />
-        <Route path = "pages/projects/timeline" element = {<Timeline />} />
-        <Route path = "ecommerce/products/product-list" element = {<ProductList />} />
+        <Route path="pages/projects/timeline" element = {<Timeline />} />
+        <Route path="ecommerce/products/product-list" element = {<ProductList />} />
+        <Route path ="ecommerce/products/product-list/:id" element={<ProductDetail />} />
+
         <Route path="pages/setting" element={<Setting />} />
         <Route path="auth/logout" element={<Logout />} />
         <Route path="*" element={<Error />} />

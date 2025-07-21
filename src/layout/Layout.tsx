@@ -17,7 +17,11 @@ const pathTitleMap: PathTitleMap = {
   "/ecommerce/products/new-product": "New Product",
   "/pages/projects/timeline": "Timeline",
   "/ecommerce/products/product-list": "Product List",
+  "/ecommerce/products/product-list/:id": "Product Detail",
+  "/ecommerce/overview": "Overview",
   "/pages/setting": "Setting",
+  
+
 
 };
 
