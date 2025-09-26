@@ -18,11 +18,7 @@ export const sidebarMenuItems = [
         label: "Dashboard",
         path: "/dashboard",
       },
-      {
-        id: "analytics",
-        label: "Analytics",
-        path: "/analytics",
-      },
+     
     ],
   },
   {
@@ -31,45 +27,6 @@ export const sidebarMenuItems = [
     icon: <Folder />,
     path: "/pages",
     children: [
-      {
-        id: "profile",
-        label: "Profile",
-        path: "/pages/profile",
-        children: [
-          {
-            id: "profileOverview",
-            label: "Profile Overview",
-            path: "/pages/profile-overview",
-          },
-          {
-            id: "teams",
-            label: "Teams",
-            path: "/pages/teams",
-          },
-          {
-            id: "allProjects",
-            label: "All Projects",
-            path: "/pages/all-projects",
-          },
-        ]
-      },
-      {
-        id: "users",
-        label: "Users",
-        path: "/pages/users",
-        children: [
-          {
-            id: "reports",
-            label: "Reports",
-            path: "/pages/reports",
-          },
-          {
-            id: "newUser",
-            label: "New User",
-            path: "/pages/new-user",
-          },
-        ]
-      },
       {
         id: "account",
         label: "Account",
@@ -80,21 +37,6 @@ export const sidebarMenuItems = [
             label: "Setting",
             path: "/pages/setting",
           },
-          {
-            id: "billing",
-            label: "Billing",
-            path: "/pages/billing",
-          },
-          {
-            id: "invoice",
-            label: "Invoice",
-            path: "/pages/invoice",
-          },
-          {
-            id: "security",
-            label: "Security",
-            path: "/pages/security",
-          },
         ]
       },
       {
@@ -103,42 +45,14 @@ export const sidebarMenuItems = [
         path: "/pages/projects",
         children: [
           {
-            id: "general",
-            label: "General",
-            path: "/pages/general",
-          },
-          {
             id: "timeline",
             label: "Timeline",
             path: "/pages/projects/timeline",
           },
-          {
-            id: "newProject",
-            label: "New Project",
-            path: "/pages/new-project",
-          },
+
         ]
       },
-      {
-        id: "pricingPage",
-        label: "Pricing page",
-        path: "/pages/pricing-page",
-      },
-      {
-        id: "charts",
-        label: "Charts",
-        path: "/pages/charts",
-      },
-      {
-        id: "notifications",
-        label: "Notifications",
-        path: "/pages/notifications",
-      },
-      {
-        id: "chat",
-        label: "Chat",
-        path: "/pages/chat",
-      },
+      
     ],
   },
   {
@@ -157,16 +71,8 @@ export const sidebarMenuItems = [
         label: "Wizard",
         path: "/applications/wizard",
       },
-      {
-        id: "dataTable",
-        label: "Data tables",
-        path: "/applications/data-tables",
-      },
-      {
-        id: "calendar",
-        label: "Calendar",
-        path: "/applications/calendar",
-      },
+
+
     ],
   },
   {
@@ -175,11 +81,7 @@ export const sidebarMenuItems = [
     icon: <ShoppingCart />,
     path: "/ecommerce",
     children: [
-      {
-        id: "overview",
-        label: "Overview",
-        path: "/ecommerce/overview",
-      },
+
       {
         id: "products",
         label: "Products",
@@ -190,11 +92,7 @@ export const sidebarMenuItems = [
             label: "New Product",
             path: "/ecommerce/products/new-product",
           },
-          {
-            id: "editProduct",
-            label: "Edit Product",
-            path: "/ecommerce/products/edit-product",
-          },
+
           {
             id: "productList",
             label: "Product List",
@@ -202,23 +100,7 @@ export const sidebarMenuItems = [
           },
         ]
       },
-      {
-        id: "orders",
-        label: "Orders",
-        path: "/ecommerce/orders",
-        children: [
-          {
-            id: "orderList",
-            label: "Order list",
-            path: "/ecommerce/orders/order-list",
-          },
-          {
-            id: "orderDetail",
-            label: "Order Detail",
-            path: "/ecommerce/orders/order-detail",
-          },
-        ]
-      },
+
     ],
   },
   {
@@ -231,16 +113,6 @@ export const sidebarMenuItems = [
         id: "login",
         label: "Login",
         path: "/auth/login",
-      },
-      {
-        id: "register",
-        label: "Register",
-        path: "/auth/register",
-      },
-      {
-        id: "forgotPassword",
-        label: "Forgot Password",
-        path: "/auth/forgot-password",
       },
       {
         id: "logout",

@@ -21,8 +21,6 @@ const pathTitleMap: PathTitleMap = {
   "/ecommerce/overview": "Overview",
   "/pages/setting": "Setting",
   
-
-
 };
 
 function Layout() {

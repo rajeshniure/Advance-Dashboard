@@ -104,7 +104,15 @@ const navigate = useNavigate();
               <Typography color="text.secondary">
                 Don’t have an account? <Link to="#">Sign up</Link>
               </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                mt={2}
+                >
+                For Demo use this: <br />Username: <strong>johnd</strong> <br /> Password: <strong>m38rmF$</strong>
+              </Typography>
             </Stack>
+               
             </Box>
           </Grid>
           <Grid size={{ xs: 6 }}>
