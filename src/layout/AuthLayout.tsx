@@ -6,7 +6,7 @@ function AuthLayout() {
     <Box
       sx={{
         backgroundColor: 'customBackgrounds.background2',
-        minHeight: '100vh',
+        minHeight: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

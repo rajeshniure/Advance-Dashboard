@@ -28,7 +28,7 @@ function Layout() {
   const title = pathTitleMap[location.pathname] || "Dashboard";
 
   return (
-    <Box display="flex" width="100%" minHeight="100vh"  bgcolor={theme.palette.customBackgrounds.background2}>
+    <Box display="flex" width="100%" minHeight="100%"  bgcolor={theme.palette.customBackgrounds.background2}>
       <Box>
         <Sidebar />
       </Box>
