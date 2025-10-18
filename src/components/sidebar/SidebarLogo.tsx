@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import sidelogo from "../../assets/image/sidelogo.svg";
+import sidelogo from "/assets/image/sidelogo.svg";
 
 const SidebarLogo = () => {
   return (

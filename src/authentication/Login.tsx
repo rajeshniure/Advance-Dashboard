@@ -1,11 +1,11 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import loginImage from "../assets/image/login.svg";
 import CustomTextField from "../components/formcomponents/CustomTextField";
 import CustomButton from "../components/buttons/CustomButton";
 import { Link, useNavigate } from "react-router-dom";
 
-import facebookImg from "../assets/image/Facebook.svg";
-import googleImg from "../assets/image/Googlee.svg";
+import loginImage from "/assets/image/login.svg";
+import facebookImg from "/assets/image/Facebook.svg";
+import googleImg from "/assets/image/Googlee.svg";
 import FormWrapper from "../singleform/FormWrapper";
 import axiosConfig from "../../axiosConfig";
 

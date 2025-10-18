@@ -1,5 +1,5 @@
-import Vectoreline from "../../assets/image/Vector 126.png";
-import pages from "../../assets/image/pages.svg";
+import Vectoreline from "/assets/image/Vector 126.png";
+import pages from "/assets/image/pages.svg";
 import { Typography, Box, Stack } from '@mui/material';
 
 const SmallLine = () => {

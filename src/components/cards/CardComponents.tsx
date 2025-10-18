@@ -13,12 +13,11 @@ import {
   ChatBubbleOutline,
 } from "@mui/icons-material";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import Oliva from "../../assets/image/Frame 1149.svg";
-// import photoshopIcon from "../../assets/image/Photoshop.svg";
-import peoplesImg from "../../assets/image/peoples.svg";
-import plusman from "../../assets/image/plusman.svg";
-import clock from "../../assets/icon/clock.png";
-import calender from "../../assets/icon/calender.png";
+import Oliva from "/assets/image/Frame 1149.svg";
+import peoplesImg from "/assets/image/peoples.svg";
+import plusman from "/assets/image/plusman.svg";
+import clock from "/assets/Icon/clock.png";
+import calender from "/assets/Icon/calender.png";
 import CustomButton from "../buttons/CustomButton";
 import { LinearProgress } from "@mui/material";
 import type { SxProps, Theme } from "@mui/material";

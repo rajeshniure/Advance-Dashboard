@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme, Divider } from "@mui/material";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import anita from "../../assets/image/anita.svg";
+import anita from "/assets/image/anita.svg";
 
 const UserProfile = () => {
   const theme = useTheme();

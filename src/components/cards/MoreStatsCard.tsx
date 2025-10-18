@@ -1,9 +1,9 @@
 import {  Stack } from '@mui/material';
 import {StatsCard} from './CardComponents';
-import usersIcon from '../../assets/image/Users.svg';
-import clicksIcon from '../../assets/image/Clicks.svg';
-import salesIcon from '../../assets/image/Sales.svg';
-import ItemsIcon from '../../assets/image/Items.svg';
+import usersIcon from '/assets/image/Users.svg';
+import clicksIcon from '/assets/image/Clicks.svg';
+import salesIcon from '/assets/image/Sales.svg';
+import ItemsIcon from '/assets/image/Items.svg';
 
 const MoreStatsCard = () => {
   return (

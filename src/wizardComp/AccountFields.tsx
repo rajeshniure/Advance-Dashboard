@@ -2,7 +2,7 @@ import { Grid, Typography, Checkbox, FormControlLabel } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 import type { UnifiedWizardFormData } from "./schemas";
 import { StatsCard } from "../components/cards/CardComponents";
-import usersIcon from "../assets/image/Users.svg";
+import usersIcon from "/assets/image/Users.svg";
 
 const activities = [
   "UI/UX",

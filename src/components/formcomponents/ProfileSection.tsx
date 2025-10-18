@@ -1,7 +1,7 @@
 
 import { Box, Avatar, Typography, IconButton,Stack } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import person from "../../assets/image/Frame 1149.svg"
+import person from "/assets/image/Frame 1149.svg"
 
 const ProfileSection = () => (
   <Box display="flex" alignItems="center" gap={2} mb={3}>
