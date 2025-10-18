@@ -39,7 +39,6 @@ function Login() {
           alignItems: "center",
           justifyContent: "center",
           minHeight: "100vh",
-          px: { xs: 2, sm: 4, md: 0 },
         }}
       >
         <Grid
@@ -54,7 +53,7 @@ function Login() {
               elevation={4}
               sx={{
                 borderRadius: 3,
-                p: { xs: 4, sm: 4, md: 6 },
+                p: { xs: 4, sm: 4, md: 4 },
                 width: "100%",
                 maxWidth: { xs: "100%", sm: 450, md: "100%" },
                 mx: "auto",
@@ -81,7 +80,7 @@ function Login() {
                     </Typography>
                   </Stack>
 
-                  <Stack spacing={1.5} mt={2}>
+                  <Stack spacing={0.3}>
                     <CustomTextField
                       label="Username"
                       type="text"
@@ -174,7 +173,7 @@ function Login() {
               alt="Login illustration"
               sx={{
                 width: "100%",
-                maxWidth: 480,
+                maxWidth: "100%",
               }}
             />
           </Grid>
