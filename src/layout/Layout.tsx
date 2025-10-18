@@ -17,7 +17,7 @@ const pathTitleMap: PathTitleMap = {
   "/applications/calendar": "Calendar",
   "/ecommerce/products/new-product": "NewProduct",
   "/pages/projects/timeline": "Timeline",
-  "/ecommerce/products/product-list": "Product List",
+  "/ecommerce/products/product-list": "ProductList",
   "/ecommerce/products/product-list/:id": "Product Detail",
   "/ecommerce/overview": "Overview",
   "/pages/setting": "Setting",
