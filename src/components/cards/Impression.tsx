@@ -68,11 +68,13 @@ const Impression = () => {
     <Card
       elevation={2}
       sx={{
-        width: "17rem",
+        width: { xs: "100%", sm: "90%", md: "17rem" },
+        maxWidth: "100%",
         borderRadius: 3,
         p: 1,
         pb:0,
         backgroundColor: theme.palette.customBackgrounds.neutral,
+        mx: "auto",
       }}
     >
       <CardContent >

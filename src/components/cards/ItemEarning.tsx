@@ -12,11 +12,13 @@ const Earning = () => {
     sx={{display:"flex",
     flexDirection:"column",
     gap:2,
-    width:"17rem",
-    padding:"1rem",
+    width: { xs: "100%", sm: "90%", md: "17rem" },
+    maxWidth: "100%",
+    p: { xs: 2, sm: 3, md: 4 },
     paddingLeft:"2rem",
     backgroundColor:"white",
     borderRadius: 3,
+    mx: "auto",
 
     }}>
         <Typography py={1} sx={{fontWeight:"700"}}>

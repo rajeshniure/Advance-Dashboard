@@ -6,7 +6,14 @@ const SmallLine = () => {
   return (
     <>
       <Box>
-      <Stack direction="column" spacing={1.7} sx={{ mb: "3rem",mt:"2rem", width:"12rem" }} >
+      <Stack direction="column" spacing={1.7} 
+      sx={{
+    mb: { xs: 2, md: 3 },
+    mt: { xs: 2, md: 2 },
+    width: { xs: "100%", md: "12rem" },
+    alignItems: { xs: "center", md: "flex-start" },
+    textAlign: { xs: "center", md: "left" },
+  }}>
         <Stack >
         <Typography variant="h1" sx={{ color: "primary.main", fontSize: "5rem" }} >
           300

@@ -8,11 +8,13 @@ const Earning = () => {
     flexDirection:"column",
     justifyContent:"center",
     alignItems:"center",
-    gap:3,
-    width:"17rem",
-    padding:"1rem",
+    gap:2,
+    width: { xs: "100%", sm: "90%", md: "17rem" },
+    maxWidth: "100%",
+    p: { xs: 2, sm: 3, md: 4 },
     borderRadius: 3,
     backgroundColor:"white",
+    mx: "auto",
     }}>
         <Typography pt={2}>
             Your earning this month

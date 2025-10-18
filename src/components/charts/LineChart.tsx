@@ -1,5 +1,5 @@
-import { Line } from 'react-chartjs-2';
-import { Card, Typography, Box, useTheme } from '@mui/material';
+import { Line } from "react-chartjs-2";
+import { Card, Typography, Box, useTheme } from "@mui/material";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +9,7 @@ import {
   Legend,
   Tooltip,
   Title,
-} from 'chart.js';
+} from "chart.js";
 
 ChartJS.register(
   LineElement,
@@ -28,9 +28,9 @@ const SalesByAgeChart = () => {
     labels: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500],
     datasets: [
       {
-        label: 'Sales',
+        label: "Sales",
         borderColor: theme.palette.primary.main,
-        backgroundColor: 'rgb(132, 27, 207)',
+        backgroundColor: "rgb(132, 27, 207)",
         data: [0, 18, 17, 32, 24, 34, 21, 24, 15, 29, 10],
         tension: 0.4,
         pointRadius: 0,
@@ -43,24 +43,24 @@ const SalesByAgeChart = () => {
     plugins: {
       legend: {
         display: true,
-        position: 'top' as const,
-        align: 'end' as const,
+        position: "top" as const,
+        align: "end" as const,
         labels: {
           usePointStyle: true,
-          pointStyle: 'circle' as const,
+          pointStyle: "circle" as const,
           boxWidth: 6,
           boxHeight: 6,
-          color: 'rgb(132, 27, 207)',
+          color: "rgb(132, 27, 207)",
         },
       },
       tooltip: {
-        mode: 'index' as const,
+        mode: "index" as const,
         intersect: false,
       },
     },
     interaction: {
-      mode: 'nearest' as const,
-      axis: 'x' as const,
+      mode: "nearest" as const,
+      axis: "x" as const,
       intersect: false,
     },
     scales: {
@@ -75,7 +75,7 @@ const SalesByAgeChart = () => {
           stepSize: 5,
           callback: (value: string | number) => {
             const num = Number(value);
-            return num === 40 ? '' : `${num} to ${num + 5}`;
+            return num === 40 ? "" : `${num} to ${num + 5}`;
           },
         },
       },
@@ -83,11 +83,23 @@ const SalesByAgeChart = () => {
   };
 
   return (
-    <Card elevation={2} sx={{ width: '75rem', px: 6, py:3, position: 'relative',backgroundColor: 'white' }}>
-      <Typography sx={{ fontSize: 25, mb: 2, color: 'black' }}>
+    <Card
+      elevation={2}
+      sx={{
+        width: { xs: "100%", sm: "95%", md: "75rem" },
+        px: { xs: 2, sm: 4, md: 6 },
+        py: { xs: 2, sm: 3, md: 3 },
+        position: "relative",
+        backgroundColor: "white",
+        mx: "auto",
+      }}
+    >
+      <Typography
+        sx={{ fontSize: { xs: 18, sm: 22, md: 25 }, mb: 2, color: "black" }}
+      >
         Sales by Age
       </Typography>
-      <Box sx={{ height: '25rem' }}>
+      <Box sx={{ height: { xs: "18rem", sm: "22rem", md: "25rem" } }}>
         <Line data={data} options={options} />
       </Box>
     </Card>

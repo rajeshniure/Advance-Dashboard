@@ -70,14 +70,15 @@ const GradientBarChart = () => {
 
   return (
     <Card
-      sx={{
-        width: 830,
-        height: 420,
-        borderRadius: 3,
-        background: theme.gradients.primary,
-        p: 3,
-        boxShadow: "none",
-      }}
+       sx={{
+    width: { xs: "100%", md: 830 },
+    height: { xs: 250, sm: 350, md: 420 },
+    borderRadius: 3,
+    background: theme.gradients.primary,
+    p: { xs: 2, sm: 3, md: 3 },
+    boxShadow: "none",
+    mx: "auto",
+  }}
     >
       <Box sx={{ height: "100%" }}>
         <Bar data={data} options={options} />

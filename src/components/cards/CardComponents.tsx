@@ -45,7 +45,19 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   imgSx
 }) => {
   return (
-    <Box sx={{ width: 240, backgroundColor: "customBackgrounds.neutral", border: 1,borderRadius: 2, borderColor: "customBackgrounds.border" ,...cardSx}}>
+    <Box 
+      sx={{
+    width: { xs: "90%", sm: 240 },
+    maxWidth: "100%",
+    backgroundColor: "customBackgrounds.neutral",
+    border: 1,
+    borderRadius: 2,
+    borderColor: "customBackgrounds.border",
+    mx: "auto",
+    mb: { xs: 2, sm: 0 },
+    ...cardSx,
+  }}
+  >
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Box display="flex" alignItems="center" gap={2} mb={2}>
           <Box component="img" src={imageSrc} alt={`${title} icon`} width={60} sx={{...imgSx}} />
