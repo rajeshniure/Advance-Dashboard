@@ -6,20 +6,17 @@ html, body, #root {
     margin: 0;
   }
   
-  /* Scale down entire app to 80% while keeping layout proportions */
   #root {
     zoom: 0.8;
   }
   
-  /* Fallback for browsers without zoom (e.g., Firefox) */
-  @supports not (zoom: 1) {
+  /* @supports not (zoom: 1) {
     #root {
       transform: scale(0.8);
       transform-origin: top left;
-      /* Expand the canvas so scaled content doesn't get clipped */
       width: 125%;
       height: 125%;
     }
-  }
+  } */
   
   

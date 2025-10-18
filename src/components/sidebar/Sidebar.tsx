@@ -5,29 +5,41 @@ import UserProfile from "./UserProfile";
 import useSidebarState from "./useSidebarState";
 import { sidebarMenuItems } from "./sidebarData";
 
-const Sidebar = () => {
+type SidebarProps = {
+  variant?: "permanent" | "temporary";
+  open?: boolean;
+  onClose?: () => void;
+};
+
+const Sidebar = ({ variant = "permanent", open = true, onClose }: SidebarProps) => {
   const theme = useTheme();
-  const { 
-    handleItemClick, 
-    handleDropdownToggle, 
-    isOpen, 
-    isActive 
+  const {
+    handleItemClick,
+    handleDropdownToggle,
+    isOpen,
+    isActive,
   } = useSidebarState(sidebarMenuItems);
 
   return (
     <Drawer
-      variant="permanent"
+      variant={variant}
+      open={open}
+      onClose={onClose}
       anchor="left"
+      ModalProps={{ keepMounted: true }}
       sx={{
-        width: "280px",
+        width: 280,
+        '& .MuiDrawer-paper': {
+          width: 280,
+          boxSizing: 'border-box',
+        }
       }}
       slotProps={{
         paper: {
           elevation: 0,
           sx: {
-            width: "280px",
             bgcolor: theme.palette.background.default,
-            borderRight: `1px solid ${theme.palette.customBackgrounds.border}`,
+            borderRight: `1px solid ${theme.palette.customBackgrounds?.border || 'transparent'}`,
             '&::-webkit-scrollbar': {
               display: 'none',
             },
@@ -37,7 +49,7 @@ const Sidebar = () => {
       }}
     >
       <SidebarLogo />
-      <SidebarMenu 
+      <SidebarMenu
         menuItems={sidebarMenuItems}
         isOpen={isOpen}
         isActive={isActive}
@@ -49,4 +61,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
