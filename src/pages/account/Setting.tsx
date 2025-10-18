@@ -174,8 +174,8 @@ const Setting = () => {
       </Box>
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Grid container spacing={3} width={1170} sx={{ mt: 2 }}>
-          <Grid size={8}>
+        <Grid container spacing={3} width={1170} sx={{ my: 2, mx: 4  }}>
+          <Grid size={{xs:12, md:8}} >
             <Box sx={{ p: 3, backgroundColor: 'white', borderRadius: 2 }}>
               <Typography variant="h6" sx={{ mb: 1, color: 'black' }}>
                 Personal information
@@ -197,7 +197,7 @@ const Setting = () => {
             </Box>
           </Grid>
 
-          <Grid size={4}>
+          <Grid size={{xs:12, md:4}}>
             <Box sx={{ p: 3, backgroundColor: 'white', borderRadius: 2, width: '100%' }}>
               <Typography variant="h6" color="black">
                 Your Photo
