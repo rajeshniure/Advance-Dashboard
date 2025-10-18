@@ -1,5 +1,4 @@
 import {Card, Typography} from '@mui/material';
-// import theme from '../../theme';
 import {ItemCard} from './CardComponents';
 import CubeIcon from '/assets/image/Cube.svg';
 import Cube2Icon from '/assets/image/Cube2.svg';
