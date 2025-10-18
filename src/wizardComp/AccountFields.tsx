@@ -49,7 +49,7 @@ const AccountFields = () => {
                   valueSx={{ fontSize: "1.5rem" }}
                   imgSx={{ width: "40px" }}
                   cardSx={{
-                    width: "11.5rem",
+                    width:{ xs: "8rem", md:"11.5rem"},
                     cursor: "pointer",
                     backgroundColor: isChecked ? "#e3f2fd" : "white",
                     border: isChecked

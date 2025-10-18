@@ -47,7 +47,7 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   return (
     <Box 
       sx={{
-    width: { xs: "90%", sm: 240 },
+    width: { xs: "22%", sm: 240 },
     maxWidth: "100%",
     backgroundColor: "customBackgrounds.neutral",
     border: 1,
@@ -58,14 +58,14 @@ export const StatsCard: React.FC<StatsCardProps> = ({
     ...cardSx,
   }}
   >
-      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <Box display="flex" alignItems="center" gap={2} mb={2}>
-          <Box component="img" src={imageSrc} alt={`${title} icon`} width={60} sx={{...imgSx}} />
-          <Typography variant="body1" color="text.primary" sx={{fontSize:"1.5rem"}}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: {xs:1, sm:2},p:{xs:0.7, sm:2} }}>
+        <Box display="flex" alignItems="center" gap={{xs:1, sm:2}} mb={{xs:0, sm:2}}>
+          <Box component="img" src={imageSrc} alt={`${title} icon`} width={{xs:25, sm:60}} sx={{...imgSx}} />
+          <Typography variant="body1" color="text.primary" sx={{fontSize:{xs:"1 rem", sm:"1.5rem"}}}>
             {title}
           </Typography>
         </Box>
-        <Typography variant="h1" fontWeight="bold" sx={{fontSize:"3.2rem", ...valueSx}}>
+        <Typography variant="h1" fontWeight="bold" sx={{fontSize:{xs:"1.5rem", sm:"3.2rem"}, ...valueSx}}>
           {value}
         </Typography>
         {progressValue !== undefined && (
@@ -153,56 +153,6 @@ export const DesignToolCard = () => (
   
   </Box>
 );       
-
-
-// export const DesignToolCard = () => (
-//   <Card sx={{ width: 1000, mt: 3, backgroundColor: "customBackgrounds.neutral" }}>
-//     <CardContent>
-//       <Box>
-//       <Typography mt={2} variant="h6">
-//       Overview      
-//       </Typography>
-//         <Typography mt={2} variant="body2">
-//         Constantly growing. We're constantly making mistakes from which we learn and improve
-//       </Typography>
-//       </Box>
-//       <Box display="flex" justifyContent="space-between">
-//           <Stack direction={"column"} spacing={0.5}>
-//             <Typography fontWeight="bold">Design tools</Typography>
-//             <img src={peoplesImg} alt="People" />
-//           </Stack>
-//         <IconButton>
-//           <MoreVert />
-//         </IconButton>
-//       </Box>
-
-      
-//       <Box>
-//         <Box display="flex" justifyContent="space-between" mt={2}>
-//           <Typography variant="body2" sx={{ fontWeight: '700' }}>10 </Typography>
-//           <Typography variant="body2" sx={{ fontWeight: '700' }}>02.08.22</Typography>
-//         </Box>
-//         <Box display="flex" justifyContent="space-between">
-//           <Typography variant="caption">Participants</Typography>
-//           <Typography variant="caption">Due date</Typography>
-//         </Box>
-//       </Box>
-//     </CardContent>
-//   </Card>
-// );       
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -4,49 +4,38 @@ import { Typography, Box, Stack } from '@mui/material';
 
 const SmallLine = () => {
   return (
-    <>
-      <Box>
-      <Stack direction="column" spacing={1.7} 
-      sx={{
-    mb: { xs: 2, md: 3 },
-    mt: { xs: 2, md: 2 },
-    width: { xs: "100%", md: "12rem" },
-    alignItems: { xs: "center", md: "flex-start" },
-    textAlign: { xs: "center", md: "left" },
-  }}>
-        <Stack >
-        <Typography variant="h1" sx={{ color: "primary.main", fontSize: "5rem" }} >
+    <Box display="flex" flexDirection={{ xs: "row", md: "column" }} gap={{ xs: 2, md: 5 }}>
+      
+      {/* Stats Section */}
+      <Stack
+        spacing={2}
+        width={{ xs: "100%", md: "12rem" }}
+        alignItems={{ xs: "center", md: "flex-start" }}
+        textAlign={{ xs: "center", md: "left" }}
+      >
+        <Typography variant="h1" color="primary.main" fontSize={{ xs: "3rem", md: "5rem" }}>
           300
         </Typography>
-        </Stack>
-        <Stack direction="row" spacing={2}>
-          <img src={pages} alt="" width="60px"/>
-          <Typography variant="h6" sx={{ fontSize: "1rem" }} >
-          Pages views per minutes
+        <Stack direction="row" spacing={2} alignItems="center">
+          <img src={pages} alt="Pages" width="60px" />
+          <Typography variant="h6" fontSize={{xs: "0.9rem", md: "1rem"}}>
+            Pages views per minutes
           </Typography>
         </Stack>
       </Stack>
-      <Stack borderTop={1} width="12rem" sx={{ borderColor: "grey.400", pt: "0.5rem" }}>
-        <Stack
-          sx={{
-            position: 'relative',
-            right: '1.4rem',
-            height: '6rem',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-        >
-          <img src={Vectoreline} alt="" width="250px" />
-        </Stack>
-        <Typography variant="h5" sx={{ fontSize: "1rem" }}>
+
+
+      <Stack borderTop={1} borderColor="grey.400" pt={{md:"0.5rem"}} width={{ xs: "100%", md: "12rem" }}>
+        <Box position="relative" right="1.4rem" height={{xs:"4.7rem", md:"6rem"}}>
+          <img src={Vectoreline} alt="Vector Line" width="250px" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        </Box>
+        <Typography variant="h5" fontSize={{ xs: "0.9rem", md: "1rem" }}>
           Upgrade your payout method in setting
         </Typography>
       </Stack>
-      </Box>
-     
-    </>
+
+    </Box>
   );
 };
 
 export default SmallLine;
-

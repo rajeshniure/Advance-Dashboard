@@ -21,11 +21,15 @@ function Dashboard() {
         </Stack>
 
         {/* RIGHT COLUMN */}
-        <Stack direction="column" spacing={3} flex={{ xs: "auto", md: 1 }}>
+        <Stack spacing={3} justifyContent={"center"}>
+        <Stack direction={{xs:"row", md:"column"}} spacing={{xs:1, md:3}} flex={{ xs: "auto", md: 1 }}>
           <Earning />
           <ItemEarning />
-          <Impression />
         </Stack>
+      
+          <Impression />
+          </Stack>
+        
       </Stack>
     </Box>
   );

@@ -15,7 +15,7 @@ const pathTitleMap: PathTitleMap = {
   "/applications/wizard": "Wizard",
   "/applications/data-tables": "Data Tables",
   "/applications/calendar": "Calendar",
-  "/ecommerce/products/new-product": "New Product",
+  "/ecommerce/products/new-product": "NewProduct",
   "/pages/projects/timeline": "Timeline",
   "/ecommerce/products/product-list": "Product List",
   "/ecommerce/products/product-list/:id": "Product Detail",
@@ -63,7 +63,7 @@ function Layout() {
           <Navbar title={title} onMenuClick={handleDrawerToggle} />
         </Box>
 
-        <Box component="section" sx={{ flexGrow: 1, p: 2, overflow: "auto" }}>
+        <Box component="section" sx={{ flexGrow: 1, p: {xs:0, md:2}, overflow: "auto", mt:{xs:2, md:0} }}>
           <Outlet />
         </Box>
       </Box>

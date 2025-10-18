@@ -8,10 +8,11 @@ import ItemsIcon from '/assets/image/Items.svg';
 const MoreStatsCard = () => {
   return (
 <Stack 
-  direction={{ xs: "column", sm: "row" }}
-  spacing={{ xs: 2, sm: 2 }}
+  direction="row"
+  spacing= "2"
   flexWrap="wrap"
-  justifyContent={{ xs: "center", sm: "space-between" }}
+  justifyContent={{xs:"center", md:"space-between"}}
+  gap={2}
   >
 <StatsCard
   imageSrc={usersIcon}
