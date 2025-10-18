@@ -1,4 +1,4 @@
-import Vectoreline from "/assets/image/Vector 126.png";
+import Vectoreline from "/assets/image/VectorLine.png";
 import pages from "/assets/image/pages.svg";
 import { Typography, Box, Stack } from '@mui/material';
 

@@ -1,5 +1,5 @@
 import { Stack,  Typography,Card } from '@mui/material'
-import menuhorizontal from '/assets/Icon/menu horizental.png'
+import menuhorizontal from '/assets/Icon/menuHorizental.svg'
 import theme from '../../theme'
 
 const Todotask = ({title}: {title: string}) => {
